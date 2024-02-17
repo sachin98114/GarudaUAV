@@ -1,0 +1,41 @@
+
+
+<header class="navbar navbar-expand-sm navbar-light">
+    <div class="container">
+      <div>
+            <input type="text"  #searchInput (keyup)="searchProduct($event)"  class="form-control search-input" placeholder="Search...">
+        </div>
+        <div>
+            <button type="button" routerLink="./update" class="btn btn-success">update</button>
+            <button class="btn btn-info add" routerLink="./add/:0"><i class="fas fa-plus"></i>Add User</button>
+        </div>
+    </div>
+  </header>
+
+  <div class="user-list">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of alldata">
+          <td>{{ user.fname|titlecase }} {{user.lname|titlecase}}</td>
+          <td>{{ user.email}}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.role|uppercase }}</td>
+          <td>{{ user.status }}</td>
+          <td class="adjust-update-link">
+            <a class="action-icon" routerLink="./add/{{user.id}}"><i class="fas fa-edit"></i></a>
+            <a (click)="delete(user.id)"><i class="fas fa-trash-alt"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

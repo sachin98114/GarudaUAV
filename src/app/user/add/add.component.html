@@ -1,0 +1,72 @@
+<div class="body">
+    <div class="container">
+        <h3>Add Users</h3>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="firstcol">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" formControlName="fname">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('fname')?.invalid ||myForm.get('fname')?.touched&&myForm.get('fname')?.invalid">*First Name is Required</p>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" formControlName="lname">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('lname')?.invalid ||myForm.get('lname')?.touched&&myForm.get('lname')?.invalid">*Last Name is Required</p>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <input type="text" id="role" name="role" formControlName="role">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('role')?.invalid ||myForm.get('role')?.touched&&myForm.get('role')?.invalid">*Role is Required</p>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" formControlName="department">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('department')?.invalid ||myForm.get('department')?.touched&&myForm.get('department')?.invalid">*Department is Required</p>
+
+                </div>
+            </div>
+            <div class="secondcol">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="emailemail" formControlName="email">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('email')?.invalid ||myForm.get('email')?.touched&&myForm.get('email')?.invalid">*Email is Required</p>
+                     <p class="text-danger" *ngIf="submitted&&myForm.get('email')?.hasError">Invalid Email</p>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="phone" id="phone" name="phone" formControlName="phone">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('phone')?.invalid ||myForm.get('phone')?.touched&&myForm.get('phone')?.invalid">*Phone is Required</p>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" formControlName="password">
+                    <p class="text-danger" *ngIf="submitted&&myForm.get('password')?.invalid ||myForm.get('password')?.touched&&myForm.get('password')?.invalid">*Password is Required</p>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword" formControlName="cpassword">
+                    <p class="text-danger" *ngIf="myForm.get('cpassword')?.touched&&myForm.get('cpassword')?.invalid">*Password is Required</p>
+                    <p class="text-danger" *ngIf="submitted && myForm.get('password')?.value!== myForm.get('cpassword')?.value" >*Password not matched</p>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea type="text" id="address" name="address" formControlName="address"></textarea>
+                <p class="text-danger" *ngIf="submitted&&myForm.get('address')?.invalid ||myForm.get('address')?.touched&&myForm.get('address')?.invalid">*Address is Required</p>
+
+            </div>
+            <div class="button">
+                <button type="button" class="btn btn-secondary" routerLink="" (click)="onCancel()">Cancel</button>
+                <button *ngIf="!updatebtn" type="submit" class="btn btn-primary">submit</button>
+                <button *ngIf="updatebtn" type="submit" class="btn btn-secondary" routerLink="" (click)="update()">update</button>
+            </div>
+
+        </form>
+    </div>
+</div>

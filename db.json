@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "fname": "Sachin",
+      "lname": "Yadav",
+      "role": "admin",
+      "department": "rt",
+      "status": "Active",
+      "email": "sachinkumar98114@gmail.com",
+      "phone": "7079717726",
+      "password": "1234",
+      "cpassword": "1234",
+      "address": "VILL+POST-BAHUARAWA, P.S-MANIGACHHI, DIST-DARBHANGA, BIHAR",
+      "id": 7
+    },
+    {
+      "fname": "naveen",
+      "lname": "Yadav",
+      "role": "admin",
+      "department": "54",
+      "status": "Active",
+      "email": "sachinkumar98114@gmail.com",
+      "phone": "7079717726",
+      "password": "5678",
+      "cpassword": "567",
+      "address": "VILL+POST-BAHUARAWA, P.S-MANIGACHHI, DIST-DARBHANGA, BIHAR",
+      "id": 9
+    },
+    {
+      "fname": "raghuveer",
+      "lname": "kumar",
+      "role": "User",
+      "department": "IT",
+      "status": "Active",
+      "email": "raghuveer@gmail.com",
+      "phone": "7979456798",
+      "password": "123",
+      "cpassword": "123",
+      "address": "MANIGACHHI, DISTRICT",
+      "id": 10
+    }
+  ]
+}
